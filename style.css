@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,400;0,700;0,900;1,200;1,400;1,700;1,900&display=swap');
+:root{
+    --green: #12df22;
+    --white: #dfcdff;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Raleway', Arial, sans-serif;
+    color: var(--white);
+}
+a{
+    color: var(--white);
+    text-decoration: none;
+}
+.nav{
+    position: fixed;
+    top: 0;
+    background-color: var(--green);
+    color: var(--white);
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 2px solid black;
+}
+.nav-list{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+.nav-list a{
+    display: block;
+    color: var(--white);
+    font-size: 2rem;
+    padding: 25px 1rem;
+}
+.nav-list a:hover{
+    animation-name: nav-hover;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+}
+@keyframes nav-hover{
+    50%{
+        background-color: green;
+        border-radius: 1rem;
+        border-bottom: 3px solid purple;
+        padding-bottom: 20px;
+    }
+    100%{
+        background-color: green;
+        border-bottom: 3px solid red;
+        padding-bottom: 20px;
+        color: white;
+        border-radius: 0.2rem;
+    }
+}
+@media(max-width: 576px){
+    .nav-list{
+        flex-direction: column;
+    }
+    .nav{
+        justify-content: center;
+    }
+}
+#welcome-section{
+    height: 100vh;
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#welcome-section h1{
+    font-size: 6rem;
+    font-weight: 700;
+}
+#welcome-section p{
+    font-size: 3rem;
+    font-style: italic;
+    color: var(--green);
+}
+#projects{
+    background-color: #0720ff;
+}
+.projects-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.project-tile{
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 0.3rem;
+    background-color: var(--green);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.project-tile img{
+    width: 100%;
+    height: 100%;
+}
+@media(max-width: 576px){
+    .projects-grid{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-tile{
+        width: 80%;
+    }
+}
+#profile-link{
+    display: block;
+    text-align: center;
+    padding: 1rem 2rem;
+    background-color: green;
+    color: purple;
+    text-decoration: none;
+    margin: 2rem auto;
+}
